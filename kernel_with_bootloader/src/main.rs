@@ -160,6 +160,11 @@ fn my_entry_point(boot_info: &'static mut bootloader_api::BootInfo) -> ! {
     };
     println!("\nString entered is '{}'", input);
 
+    interrupts::init();
+    let input = input_str!("Ebuka's String :");
+    println!("\nString entered by Ebuka'{}'",input);
+    
+
 
     // invoke a breakpoint exception for test
     //x86_64::instructions::interrupts::int3();
